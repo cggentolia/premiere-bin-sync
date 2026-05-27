@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <div class="panel">
+      <sp-heading size="S">Folder Bin Sync</sp-heading>
+      <sp-body size="XS" class="muted">
+        Mirrors a Finder folder's structure into your project's bins and
+        imports new files automatically.
+      </sp-body>
+
+      <div class="row">
+        <sp-button id="chooseBtn" variant="secondary">Choose Folder…</sp-button>
+      </div>
+
+      <sp-body size="XS" id="folderPath" class="path">No folder selected.</sp-body>
+
+      <sp-body size="XS" id="projectName" class="project">Project: not watching</sp-body>
+
+      <sp-checkbox id="importExisting">Import files already in the folder</sp-checkbox>
+
+      <div class="row">
+        <sp-button id="toggleBtn" variant="cta" disabled>Start Watching</sp-button>
+      </div>
+
+      <sp-body size="XS" id="status" class="status"></sp-body>
+
+      <sp-divider size="medium"></sp-divider>
+
+      <div class="row activity-head">
+        <sp-body size="XS" class="muted">Activity</sp-body>
+        <sp-button id="clearLogBtn" variant="secondary" quiet>Clear</sp-button>
+      </div>
+      <div id="log" class="log"></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+
+# Local tooling / config
+.claude/
+
+# Logs
+*.log
+
+# Packaged plugin output
+*.ccx
+dist/
