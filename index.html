@@ -1,39 +1,56 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="styles.css" />
     <script src="index.js"></script>
   </head>
   <body>
     <div class="panel">
-      <sp-heading size="S">Folder Bin Sync</sp-heading>
-      <sp-body size="XS" class="muted">
-        Mirrors a Finder folder's structure into your project's bins and
-        imports new files automatically.
-      </sp-body>
-
-      <div class="row">
-        <sp-button id="chooseBtn" variant="secondary">Choose Folder…</sp-button>
+      <div class="header">
+        <div class="title">FOLDER BIN SYNC</div>
+        <div class="title-rule"></div>
+        <div class="subtitle">
+          Mirrors your Project Assets folder into Premiere bins and imports new
+          files automatically.
+        </div>
       </div>
 
-      <sp-body size="XS" id="folderPath" class="path">No folder selected.</sp-body>
-
-      <sp-body size="XS" id="projectName" class="project">Project: not watching</sp-body>
-
-      <sp-checkbox id="importExisting">Import files already in the folder</sp-checkbox>
-
-      <div class="row">
-        <sp-button id="toggleBtn" variant="cta" disabled>Start Watching</sp-button>
+      <div class="card">
+        <div class="card-label">Active Project</div>
+        <div id="projectName" class="project">No project open</div>
+        <div id="status" class="status"></div>
       </div>
 
-      <sp-body size="XS" id="status" class="status"></sp-body>
+      <div class="card">
+        <div class="card-label">Watched Folder</div>
+        <div id="folderPath" class="path">No folder selected.</div>
+        <button id="chooseBtn" class="btn secondary">Choose Folder…</button>
+      </div>
 
-      <sp-divider size="medium"></sp-divider>
+      <div class="card">
+        <div class="card-label">Auto-Watch</div>
+        <div id="rootPath" class="path">No projects folder set.</div>
+        <button id="rootBtn" class="btn secondary">Set Projects Folder…</button>
+        <label class="check">
+          <input type="checkbox" id="autoWatch" checked />
+          <span>Start watching automatically when a project opens</span>
+        </label>
+        <label class="check">
+          <input type="checkbox" id="importExisting" />
+          <span>Import files already in the folder</span>
+        </label>
+      </div>
 
-      <div class="row activity-head">
-        <sp-body size="XS" class="muted">Activity</sp-body>
-        <sp-button id="clearLogBtn" variant="secondary" quiet>Clear</sp-button>
+      <div class="actions">
+        <button id="toggleBtn" class="btn cta" disabled>Start Watching</button>
+        <button id="scanBtn" class="btn" disabled>Scan Now</button>
+      </div>
+
+      <div class="activity-head">
+        <span class="card-label">Activity</span>
+        <button id="clearLogBtn" class="btn quiet">Clear</button>
       </div>
       <div id="log" class="log"></div>
     </div>
